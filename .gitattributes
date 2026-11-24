@@ -1,0 +1,7 @@
+# Tell GitHub's language detection that the game code is real, hand-written source.
+# (Without this it treats long-line JavaScript/CSS as "minified" and only counts the HTML.)
+js/*.js linguist-generated=false linguist-vendored=false linguist-detectable=true
+css/*.css linguist-generated=false linguist-vendored=false linguist-detectable=true
+tools/*.py linguist-detectable=true
+# app install profiles are data, not code
+*.mobileconfig linguist-vendored=true
