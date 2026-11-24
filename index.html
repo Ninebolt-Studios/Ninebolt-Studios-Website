@@ -14,13 +14,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20261124173502">
+<link rel="stylesheet" href="css/site.css?v=20261124195253">
 </head>
 <body>
 <nav>
   <div class="wrap">
     <a class="brand" href="#top"><img src="ninebolt-icon-round.png" alt=""><span>NINEBOLT</span></a>
-    <div class="links"><a href="#games">Games</a><a href="#about">About</a><a href="#play">Get the apps</a></div>
+    <div class="links"><a href="#games">Games</a><a href="#profile">Profile</a><a href="#about">About</a><a href="#play">Get the apps</a></div>
   </div>
 </nav>
 
@@ -52,6 +52,18 @@
     </div>
 
     <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="eyebrow">Your Ninebolt</div>
+    <h2>Profile &amp; leaderboards</h2>
+    <p class="lead">One account for every game. See all your stats in one place, and how you stack up against everyone else.</p>
+    <div id="profileRoot">
+      <div class="card prof-card" id="profCard"><div class="prof-loading">Loading…</div></div>
+      <div class="card lb-card"><h3>🏆 Top players</h3><div class="lb-tabs" id="lbTabs"></div><div class="lb-list" id="lbList"></div></div>
+    </div>
   </div>
 </section>
 
@@ -101,8 +113,9 @@
     <span>© <span id="year">2026</span> Ninebolt Studios. All rights reserved.</span>
   </div>
 </footer>
-<script src="js/site.js?v=20261124173502"></script>
-<script src="js/updates.js?v=20261124173502"></script>
-<script src="js/sparks.js?v=20261124173502"></script>
+<script src="js/site.js?v=20261124195253"></script>
+<script src="js/updates.js?v=20261124195253"></script>
+<script src="js/sparks.js?v=20261124195253"></script>
+<script src="js/profile.js?v=20261124195253"></script>
 </body>
 </html>

@@ -56,6 +56,22 @@
       chips: ['👥 Up to 20 players', '🌐 Online rooms', '🤖 Bots', '🏝️ 3 islands', '💣 Crates', '🎩 Hats',
         '🎓 Tutorial', '☁️ Accounts', '🎮 Controller support', '📱 Phone, iPad & PC'],
     },
+    {
+      id: 'four-square-smash',
+      name: 'FOUR SQUARE SMASH',
+      short: 'Four Square Smash',
+      path: 'Four-Square-Smash/',
+      profile: 'Four-Square-Smash/FourSquareSmash.mobileconfig',
+      icon: 'fs-icon.png',
+      tag: 'BRAND NEW · FREE',
+      accent: { bg: '#2ad4c8', fg: '#04201e' },
+      art: { shot: 'fs-shot.jpg', title: ['FOUR SQUARE', 'SMASH'], stacked: true, titleAccent: '#ffc93c' },
+      blurb: 'First-person four square, just like recess. Stand in your square, wait for the bounce, and smack the ball into ' +
+        'someone else\'s square. Aim with your eyes, unleash a 💥 smash, and climb all the way to 👑 King. Play bots or ' +
+        'up to 8 friends online (4 on the court, the rest wait in line).',
+      chips: ['🏐 First person', '👑 Climb to King', '💥 Smash shots', '👥 8 players online', '🤖 Bots', '🏫 3 playgrounds',
+        '🎓 Tutorial', '☁️ Accounts', '📱 Phone, iPad & PC'],
+    },
   ];
 
   const STATS = [
