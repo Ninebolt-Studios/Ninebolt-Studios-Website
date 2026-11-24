@@ -15,4 +15,11 @@
 One ☁️ account works in every Ninebolt game.
 
 ## 🛠️ About this repo
-This is the studio website: a single `index.html` with its images, hosted free on GitHub Pages (Settings → Pages → main / root).
+The studio website, hosted free on GitHub Pages (Settings → Pages → main / root).
+
+- `js/site.js`: builds the game cards, app buttons, stats and footer from one `GAMES` list (add a game = add one entry)
+- `js/updates.js`: the **Latest updates** feed, pulled live from each game's GitHub repo
+- `js/sparks.js`: the animated lightning + ember background in the hero
+- `css/site.css`: all the styling
+- `index.html`: the page layout
+- `tools/release.py`: Python release helper (checks the JavaScript and bumps version stamps)
