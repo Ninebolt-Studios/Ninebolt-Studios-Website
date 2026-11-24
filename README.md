@@ -9,6 +9,7 @@
 | | Game | Play | Code |
 |---|---|---|---|
 | <img src="ashfall-icon.png" width="48"> | **Ashfall**: tactical arena shooter. 5v5 online, Duels, co-op Zombies, Battle Royale-lite, Prop Hunt, weekly seasons | [▶ Play](https://ninebolt-studios.github.io/Ashfall/) | [Repo](https://github.com/Ninebolt-Studios/Ashfall) |
+| <img src="ki-icon.png" width="48"> | **Knockout Isles**: 20-player party brawler. Punch and dash rivals off crumbling floating islands, online rooms + bots | [▶ Play](https://ninebolt-studios.github.io/Knockout-Isles/) | [Repo](https://github.com/Ninebolt-Studios/Knockout-Isles) |
 | <img src="boltrush-icon.png" width="48"> | **Boltrush**: arcade racer. 7 adaptive rivals, drift combos, ⚡ items, ramps, tutorial | [▶ Play](https://ninebolt-studios.github.io/Boltrush/) | [Repo](https://github.com/Ninebolt-Studios/Boltrush) |
 
 One ☁️ account works in every Ninebolt game.
