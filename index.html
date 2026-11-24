@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ninebolt Studios</title>
+<meta name="description" content="Ninebolt Studios is an indie game studio. We make fast, free games you can play right in your browser: Ashfall and Boltrush.">
+<meta name="theme-color" content="#12131a">
+<link rel="icon" href="ninebolt-icon-round.png">
+<link rel="apple-touch-icon" href="ninebolt-icon-round.png">
+<meta property="og:title" content="Ninebolt Studios">
+<meta property="og:description" content="Indie games with a jolt. Play Ashfall free in your browser.">
+<meta property="og:image" content="ninebolt-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #12131a; --bg2: #181a24; --card: #1c1e2a; --line: rgba(242, 239, 232, .1);
+    --ink: #f2efe8; --dim: rgba(242, 239, 232, .68); --bolt: #ffd23f; --bolt2: #ffb703; --ash: #ee5a30;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.6 Inter, system-ui, -apple-system, Segoe UI, sans-serif; overflow-x: hidden; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: rgba(18, 19, 26, .78); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+  nav .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 400 18px 'Archivo Black', sans-serif; letter-spacing: .04em; }
+  nav .brand img { width: 34px; height: 34px; }
+  nav .links { display: flex; gap: 22px; font-weight: 600; font-size: 15px; }
+  nav .links a { text-decoration: none; color: var(--dim); transition: color .15s; }
+  nav .links a:hover { color: var(--bolt); }
+  @media (max-width: 560px) { nav .links { gap: 14px; font-size: 14px; } nav .brand span { display: none; } }
+
+  /* hero */
+  .hero { position: relative; padding: 96px 0 84px; text-align: center; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: -40% -10% auto; height: 120%; background: radial-gradient(ellipse 50% 45% at 50% 40%, rgba(255, 210, 63, .16), transparent 70%); pointer-events: none; }
+  .hero .grid { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000, transparent 75%); opacity: .5; pointer-events: none; }
+  .hero img.logo { position: relative; width: min(620px, 92%); margin: 0 auto; filter: drop-shadow(0 10px 40px rgba(0, 0, 0, .5)); animation: rise .9s ease-out both; }
+  .hero h1 { position: relative; font: 400 clamp(30px, 5vw, 52px)/1.1 'Archivo Black', sans-serif; margin: 34px 0 14px; letter-spacing: .01em; animation: rise .9s .1s ease-out both; }
+  .hero h1 em { font-style: normal; color: var(--bolt); }
+  .hero p { position: relative; max-width: 640px; margin: 0 auto 30px; color: var(--dim); font-size: 18px; animation: rise .9s .2s ease-out both; }
+  .cta { position: relative; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; animation: rise .9s .3s ease-out both; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 12px; font: 700 16px Inter, sans-serif; text-decoration: none; transition: transform .15s, box-shadow .15s, background .15s; border: 1px solid transparent; }
+  .btn.go { background: var(--bolt); color: #14120a; box-shadow: 0 8px 30px rgba(255, 210, 63, .25); }
+  .btn.go:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255, 210, 63, .38); }
+  .btn.ghost { border-color: var(--line); background: rgba(255, 255, 255, .03); }
+  .btn.ghost:hover { border-color: var(--bolt); transform: translateY(-2px); }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  /* sections */
+  section { padding: 84px 0; }
+  .eyebrow { font: 700 13px Inter, sans-serif; letter-spacing: .22em; text-transform: uppercase; color: var(--bolt); margin-bottom: 10px; }
+  h2 { font: 400 clamp(28px, 4vw, 40px)/1.15 'Archivo Black', sans-serif; margin: 0 0 18px; }
+  .lead { color: var(--dim); max-width: 720px; margin: 0 0 40px; }
+
+  /* games */
+  .game { display: grid; grid-template-columns: 1.15fr 1fr; gap: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 30px 80px rgba(0, 0, 0, .35); }
+  .game .art { position: relative; min-height: 340px; background: radial-gradient(ellipse 80% 70% at 30% 30%, rgba(238, 90, 48, .35), transparent 65%), linear-gradient(160deg, #2a140c, #0f0c0a); display: grid; place-items: center; padding: 36px; }
+  .game .art img { width: min(460px, 100%); filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .55)); }
+  .game .art .tag { position: absolute; top: 18px; left: 18px; background: var(--ash); color: #fff; font: 700 12px Inter, sans-serif; letter-spacing: .14em; padding: 6px 10px; border-radius: 8px; }
+  .game .info { padding: 34px 34px 32px; display: flex; flex-direction: column; gap: 16px; }
+  .game .info h3 { font: 400 30px 'Archivo Black', sans-serif; margin: 0; letter-spacing: .03em; }
+  .game .info p { margin: 0; color: var(--dim); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips span { font: 600 13px Inter, sans-serif; padding: 6px 11px; border-radius: 999px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); }
+  .game .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+  .game .btn.go { background: var(--ash); color: #fff; box-shadow: 0 8px 30px rgba(238, 90, 48, .3); }
+  @media (max-width: 860px) { .game { grid-template-columns: 1fr; } .game .art { min-height: 220px; } }
+  .soon { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; padding: 24px 26px; border-radius: var(--radius); border: 1px dashed rgba(255, 210, 63, .35); background: linear-gradient(120deg, rgba(255, 210, 63, .07), transparent 60%); }
+  .soon .q { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; font: 400 28px 'Archivo Black', sans-serif; color: var(--bolt); background: rgba(255, 210, 63, .1); }
+  .soon b { font-size: 18px; } .soon p { margin: 2px 0 0; color: var(--dim); }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; }
+  .stat { background: var(--bg2); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .stat b { display: block; font: 400 34px 'Archivo Black', sans-serif; color: var(--bolt); line-height: 1.1; }
+  .stat span { color: var(--dim); font-size: 14px; }
+  @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+  /* about */
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .about .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
+  .about .card img { width: 96px; margin-bottom: 14px; }
+  .values { display: grid; gap: 14px; }
+  .value { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+  .value i { font-style: normal; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(255, 210, 63, .1); font-size: 22px; }
+  .value b { display: block; } .value span { color: var(--dim); font-size: 15px; }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+
+  /* app */
+  .app { text-align: center; background: linear-gradient(180deg, transparent, rgba(255, 210, 63, .05)); border-top: 1px solid var(--line); }
+  .app p { color: var(--dim); max-width: 620px; margin: 0 auto 26px; }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 calc(34px + env(safe-area-inset-bottom, 0px)); color: var(--dim); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+  footer img { height: 34px; width: auto; }
+
+  .bolt { display: inline-block; animation: zap 3.2s infinite; }
+  @keyframes zap { 0%, 88%, 100% { filter: none; } 90% { filter: drop-shadow(0 0 10px var(--bolt)); } 93% { filter: none; } 95% { filter: drop-shadow(0 0 14px var(--bolt)); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="ninebolt-icon-round.png" alt=""><span>NINEBOLT</span></a>
+    <div class="links"><a href="#games">Games</a><a href="#about">About</a><a href="#play">Play</a></div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="grid"></div>
+  <div class="wrap">
+    <img class="logo" src="ninebolt-dark.png" alt="Ninebolt Studios">
+    <h1>Games with a <em class="bolt">jolt</em>.</h1>
+    <p>We’re Ninebolt Studios, a small indie team making fast, fun games you can play for free, right in your browser. No downloads, no waiting: tap and play.</p>
+    <div class="cta">
+      <a class="btn go" href="https://ninebolt-studios.github.io/Ashfall/">⚡ Play Ashfall now</a>
+      <a class="btn ghost" href="#games">See our games</a>
+    </div>
+  </div>
+</header>
+
+<section id="games">
+  <div class="wrap">
+    <div class="eyebrow">Our games</div>
+    <h2>What we’re building</h2>
+    <p class="lead">Every Ninebolt game is free to play, works on phones, iPads and computers, and gets new stuff all the time.</p>
+
+    <article class="game">
+      <div class="art"><span class="tag">OUT NOW · FREE</span><img src="ashfall-logo.png" alt="Ashfall"></div>
+      <div class="info">
+        <h3>ASHFALL</h3>
+        <p>A tactical arena shooter. Squad up for 5v5 online battles, run it back 1v1 in Duels, survive endless Zombies with friends, drop into Battle Royale-lite, or hide in plain sight in Prop Hunt. New seasons drop every week.</p>
+        <div class="chips"><span>⚔️ 5v5 online</span><span>🧟 Co-op Zombies</span><span>🪂 Battle Royale-lite</span><span>🤝 Duels</span><span>📦 Prop Hunt</span><span>🎖️ Weekly seasons</span><span>🎙️ Voice chat</span><span>📱 Phone, iPad &amp; PC</span></div>
+        <div class="btns">
+          <a class="btn go" href="https://ninebolt-studios.github.io/Ashfall/">▶ Play free</a>
+          <a class="btn ghost" href="https://ninebolt-studios.github.io/Ashfall/Ashfall.mobileconfig">📲 Get the app</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="game" style="margin-top:22px">
+      <div class="art" style="background:radial-gradient(ellipse 80% 70% at 30% 30%, rgba(255,210,63,.35), transparent 65%), linear-gradient(160deg, #1a1830, #0c0d16)"><span class="tag" style="background:var(--bolt);color:#15130a">NEW · FREE</span><div style="font:900 clamp(44px,7vw,74px)/.9 'Archivo Black',Impact,sans-serif;font-style:italic;letter-spacing:.02em;text-shadow:0 8px 30px rgba(0,0,0,.5)">BOLT<span style="color:var(--bolt)">RUSH</span></div></div>
+      <div class="info">
+        <h3>BOLTRUSH</h3>
+        <p>An arcade racer built for quick sessions. Race 7 rivals through a neon city, a desert canyon and a snowy mountain pass. Drift through corners to charge your nitro, hit the boost pads, and win coins to unlock faster cars.</p>
+        <div class="chips"><span>🏁 Race 7 rivals</span><span>⏱️ Time trials</span><span>💨 Drift + nitro</span><span>🚗 4 cars, 8 paints</span><span>🎮 Controller support</span><span>📱 Phone, iPad &amp; PC</span></div>
+        <div class="btns"><a class="btn go" style="background:var(--bolt);color:#15130a" href="https://ninebolt-studios.github.io/Ashfall/boltrush/">▶ Play free</a></div>
+      </div>
+    </article>
+
+    <div class="soon">
+      <div class="q">?</div>
+      <div><b>More coming soon</b><p>We’re always cooking up something new. Keep an eye on this page.</p></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>15+</b><span>game modes in Ashfall</span></div>
+      <div class="stat"><b>10</b><span>maps, from rooftops to jungle ruins</span></div>
+      <div class="stat"><b>20+</b><span>weapons, blueprints &amp; camos</span></div>
+      <div class="stat"><b>$0</b><span>free to play, forever</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="eyebrow">About us</div>
+      <h2>Small studio. Big energy.</h2>
+      <p class="lead" style="margin-bottom:24px">Ninebolt Studios started with one idea: make the kind of games we want to play with our friends, and put them where anyone can jump in instantly. We listen to our players, ship updates fast, and never stop adding stuff.</p>
+      <div class="values">
+        <div class="value"><i>⚡</i><div><b>Instant fun</b><span>Open a link and you’re playing. No installs, no accounts required.</span></div></div>
+        <div class="value"><i>🛠️</i><div><b>Always updating</b><span>New modes, maps, guns and seasons every week.</span></div></div>
+        <div class="value"><i>🤝</i><div><b>Built for friends</b><span>Parties, voice chat, co-op and private matches so you can play together.</span></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="ninebolt-icon-round.png" alt="">
+      <h3 style="font:400 24px 'Archivo Black',sans-serif;margin:0 0 8px">Ninebolt Studios</h3>
+      <p style="color:var(--dim);margin:0 0 18px">Independent game studio · Est. 2026</p>
+      <a class="btn ghost" href="https://github.com/Ninebolt-Studios/Ashfall">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="app" id="play">
+  <div class="wrap">
+    <div class="eyebrow">Play anywhere</div>
+    <h2>Jump in right now</h2>
+    <p>Ashfall runs in your browser on iPhone, iPad, Android and computers. On an iPhone or iPad, grab the app profile to put Ashfall on your home screen with its own icon.</p>
+    <div class="cta">
+      <a class="btn go" href="https://ninebolt-studios.github.io/Ashfall/">⚡ Play Ashfall</a>
+      <a class="btn ghost" href="https://ninebolt-studios.github.io/Ashfall/Ashfall.mobileconfig">📲 Install on iPhone / iPad</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="ninebolt-dark.png" alt="Ninebolt Studios">
+    <span>© 2026 Ninebolt Studios. All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>
