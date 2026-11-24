@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="ninebolt-icon-round.png">
 <meta property="og:title" content="Ninebolt Studios">
 <meta property="og:description" content="Indie games with a jolt. Play Ashfall and Boltrush free in your browser.">
-<meta property="og:image" content="ninebolt-dark.png">
+<meta property="og:image" content="https://ninebolt-studios.github.io/Ninebolt-Studios-Website/ninebolt-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -104,6 +104,8 @@
   .bolt { display: inline-block; animation: zap 3.2s infinite; }
   @keyframes zap { 0%, 88%, 100% { filter: none; } 90% { filter: drop-shadow(0 0 10px var(--bolt)); } 93% { filter: none; } 95% { filter: drop-shadow(0 0 14px var(--bolt)); } }
   @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } }
+  footer .flinks { display: flex; gap: 18px; } footer .flinks a { color: var(--dim); text-decoration: none; font-weight: 600; } footer .flinks a:hover { color: var(--bolt); }
+  @media (max-width: 640px) { footer .wrap { flex-direction: column; gap: 12px; text-align: center; } }
 </style>
 </head>
 <body>
@@ -117,7 +119,7 @@
 <header class="hero" id="top">
   <div class="grid"></div>
   <div class="wrap">
-    <img class="logo" src="ninebolt-dark.png" alt="Ninebolt Studios">
+    <img class="logo" src="ninebolt-logo-clear.png" alt="Ninebolt Studios">
     <h1>Games with a <em class="bolt">jolt</em>.</h1>
     <p>We’re Ninebolt Studios, a small indie team making fast, fun games you can play for free, right in your browser. No downloads, no waiting: tap and play.</p>
     <div class="cta">
@@ -133,7 +135,7 @@
     <p class="lead">Every Ninebolt game is free to play, works on phones, iPads and computers, and gets new stuff all the time.</p>
 
     <article class="game">
-      <div class="art"><span class="tag">OUT NOW · FREE</span><img src="ashfall-logo.png" alt="Ashfall"></div>
+      <div class="art"><span class="tag">OUT NOW · FREE</span><img src="ashfall-logo-clear.png" alt="Ashfall"></div>
       <div class="info">
         <h3>ASHFALL</h3>
         <p>A tactical arena shooter. Squad up for 5v5 online battles, run it back 1v1 in Duels, survive endless Zombies with friends, drop into Battle Royale-lite, or hide in plain sight in Prop Hunt. New seasons drop every week.</p>
@@ -146,11 +148,11 @@
     </article>
 
     <article class="game" style="margin-top:22px">
-      <div class="art" style="background:radial-gradient(ellipse 80% 70% at 30% 30%, rgba(255,210,63,.35), transparent 65%), linear-gradient(160deg, #1a1830, #0c0d16)"><span class="tag" style="background:var(--bolt);color:#15130a">NEW · FREE</span><div style="font:900 clamp(44px,7vw,74px)/.9 'Archivo Black',Impact,sans-serif;font-style:italic;letter-spacing:.02em;text-shadow:0 8px 30px rgba(0,0,0,.5)">BOLT<span style="color:var(--bolt)">RUSH</span></div></div>
+      <div class="art" style="background:linear-gradient(180deg, rgba(12,13,22,.15), rgba(12,13,22,.75)), url(boltrush-shot.jpg) center/cover"><span class="tag" style="background:var(--bolt);color:#15130a">NEW · FREE</span><div style="font:900 clamp(44px,7vw,74px)/.9 'Archivo Black',Impact,sans-serif;font-style:italic;letter-spacing:.02em;text-shadow:0 8px 30px rgba(0,0,0,.7)">BOLT<span style="color:var(--bolt)">RUSH</span></div></div>
       <div class="info">
         <h3>BOLTRUSH</h3>
-        <p>An arcade racer built for quick sessions. Race 7 rivals through a neon city, a desert canyon and a snowy mountain pass. Drift for combo points and nitro, grab ⚡ item boxes to shock rivals, launch off ramps, smash cones and win coins to unlock faster cars. New? The built-in tutorial teaches you everything in two minutes.</p>
-        <div class="chips"><span>🏁 Race 7 rivals</span><span>⚡ Items + ramps</span><span>💨 Drift combos</span><span>🎓 Tutorial</span><span>⏱️ Time trials</span><span>🚗 4 cars, 8 paints</span><span>🎮 Controller support</span><span>📱 Phone, iPad &amp; PC</span></div>
+        <p>An arcade racer built for quick sessions. Race 7 rivals through a neon city, a desert canyon and a snowy mountain pass. Drift for combo points and nitro, grab ⚡ item boxes to shock rivals, launch off ramps, smash cones and win coins to unlock faster cars. Rivals adapt to how you drive, so every race is close. New? The built-in tutorial teaches you everything in two minutes, and your progress saves to the same account as Ashfall.</p>
+        <div class="chips"><span>🏁 Race 7 rivals</span><span>⚡ Items + ramps</span><span>💨 Drift combos</span><span>🎓 Tutorial</span><span>☁️ Accounts</span><span>⏱️ Time trials</span><span>🚗 4 cars, 8 paints</span><span>🎮 Controller support</span><span>📱 Phone, iPad &amp; PC</span></div>
         <div class="btns"><a class="btn go" style="background:var(--bolt);color:#15130a" href="https://ninebolt-studios.github.io/Boltrush/">▶ Play free</a><a class="btn ghost" href="https://ninebolt-studios.github.io/Boltrush/Boltrush.mobileconfig">📲 Get the app</a></div>
       </div>
     </article>
@@ -185,7 +187,7 @@
       <img src="ninebolt-icon-round.png" alt="">
       <h3 style="font:400 24px 'Archivo Black',sans-serif;margin:0 0 8px">Ninebolt Studios</h3>
       <p style="color:var(--dim);margin:0 0 18px">Independent game studio · Est. 2026</p>
-      <a class="btn ghost" href="https://github.com/Ninebolt-Studios/Ashfall">View on GitHub</a>
+      <a class="btn ghost" href="https://github.com/Ninebolt-Studios">View on GitHub</a>
     </div>
   </div>
 </section>
@@ -196,15 +198,16 @@
     <h2>Get the apps</h2>
     <p>Both games run in your browser on iPhone, iPad, Android and computers. On an iPhone or iPad, tap a button below to put the game on your home screen with its own icon (it opens full screen, like a real app). On Android or a computer, open the game and tap <b>📲 Get the app</b> in its menu.</p>
     <div class="cta">
-      <a class="btn ghost" href="https://ninebolt-studios.github.io/Ashfall/Ashfall.mobileconfig"><img src="ashfall-logo.png" alt="" style="height:22px;vertical-align:-5px;margin-right:6px">Ashfall app</a>
-      <a class="btn go" style="background:var(--bolt);color:#15130a" href="https://ninebolt-studios.github.io/Boltrush/Boltrush.mobileconfig"><img src="boltrush-icon.png" alt="" style="height:22px;vertical-align:-5px;margin-right:6px;border-radius:5px">Boltrush app</a>
+      <a class="btn ghost" href="https://ninebolt-studios.github.io/Ashfall/Ashfall.mobileconfig"><img src="ashfall-icon.png" alt="" style="height:26px;width:26px;border-radius:6px">Ashfall app</a>
+      <a class="btn go" style="background:var(--bolt);color:#15130a" href="https://ninebolt-studios.github.io/Boltrush/Boltrush.mobileconfig"><img src="boltrush-icon.png" alt="" style="height:26px;width:26px;border-radius:6px">Boltrush app</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="ninebolt-dark.png" alt="Ninebolt Studios">
+    <img src="ninebolt-logo-clear.png" alt="Ninebolt Studios">
+    <span class="flinks"><a href="https://ninebolt-studios.github.io/Ashfall/">Ashfall</a><a href="https://ninebolt-studios.github.io/Boltrush/">Boltrush</a><a href="https://github.com/Ninebolt-Studios">GitHub</a></span>
     <span>© 2026 Ninebolt Studios. All rights reserved.</span>
   </div>
 </footer>
